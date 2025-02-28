@@ -7,7 +7,6 @@ export default function Nav() {
             <ul className='flex gap-10 font-bold'>
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/Plan">Plan</Link></li>
-                <li><Link href="/planingHistory">Plan History</Link></li>
             </ul>
         </nav>
     );
