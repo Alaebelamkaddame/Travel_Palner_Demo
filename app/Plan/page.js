@@ -52,7 +52,7 @@ export default function PlanPage() {
                   ]
                 }
                 Ensure the JSON output is valid and properly formatted, don't suggest anything isn't in the form, stick to the form strictly, if only a one city is 
-                mentionned don't suggest travel to other city .`
+                mentionned don't suggest travel to other city, give a plan stricted to the input given with calculated the time to travel from city to other .`
               }
             ]
           }
