@@ -36,23 +36,32 @@ export default function PlanPage() {
           {
             parts: [
               {
-                text: `Generate a detailed travel plan for Morocco in valid JSON format only. Do not include any explanations, markdown, or extra formatting. The response should strictly follow this structure:
-                {
-                  "days": [
+                text: `Generate a structured and detailed travel itinerary in **valid JSON format only**. Do not include explanations, markdown, or extra formatting. The output must strictly adhere to this structure:
                     {
-                      "day": 1,
-                      "title": "Arrival in ${form.city}",
-                      "activities": ["describe the activity"],
-                      "accommodation": "",
-                      "transportation": "Airport transfer",
-                      "dining": "",
-                      "tips": "Carry local currency",
-                      "image_search_query": "Best tourist spots in ${form.city}"
+                      "days": [
+                        {
+                          "contry": Morocco
+                          "day": 1,
+                          "number of days": ${form.Number_of_days}
+                          "title": "Arrival in ${form.city}",
+                          "activities": ["Describe the planned activities for the day, ${form.activities}"],
+                          "accommodation": "Recommended hotels or places to stay",
+                          "transportation": "Specify the mode of transport",
+                          "dining": "Recommended restaurants or food options",
+                          "tips": "Useful travel tips relevant to this location",
+                          "image_search_query": "Best tourist spots in ${form.city}"
+                        }
+                      ]
                     }
-                  ]
-                }
-                Ensure the JSON output is valid and properly formatted, don't suggest anything isn't in the form, stick to the form strictly, if only a one city is 
-                mentionned don't suggest travel to other city, give a plan stricted to the input given with calculated the time to travel from city to other .`
+
+                    ### **Guidelines:**
+                    - **Strictly adhere to the provided input fields** in the form. Do not add or assume extra details.
+                    - **If only one city is mentioned,** do not suggest travel to other cities. The entire itinerary must focus on that city.
+                    - **If multiple cities are mentioned,** calculate realistic travel times between them and integrate them into the plan.
+                    - Ensure the **JSON output is valid and properly formatted.**
+                    - **Do not include any text outside the JSON.** Only return the structured data.
+                    - show more than just 3 days.
+`
               }
             ]
           }
